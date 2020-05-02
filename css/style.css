@@ -1,0 +1,54 @@
+.container{
+  max-width:750px;
+  margin:0 auto;
+}
+
+
+/* 左から現れるボックスの設定 */
+.left{
+    transform:translateX(-50px);/* 最初は元の位置より左にずらしておくが-50pxを変えると
+                                   ずらし具合を変えることができる。
+                                   小さい値にしすぎると左から現れる感じを出せない */
+    opacity:0;  /* 最初は非表示にしておく */
+    transition:opacity 1s,transform 5s;/* 5sを変えると現れるまでの時間を変えることができる*/
+  }
+
+  
+  /* スクロールして追加するクラスの設定 */
+  .left-fadein{
+    opacity:1;/* 表示させる */
+    transform:translateX(0); /* 位置を最初の位置に戻す。
+                                0以外の10pxとかにすると始めの位置より右に動く */
+  }
+
+
+  /*右から現れるボックスの指定*/
+  .right{ /*.leftの時と位置の指定方法が変わる*/
+      transform:translate(50px,0); /*元の位置より右にずらすけど座標にする。
+                                    この時50px以外のプラスの値にすると
+                                    もっと右にずらせる*/
+      opacity:0;  /* 最初は非表示にしておく */
+      transition:opacity 1s,transform 5s;/* 透明度と位置を設定 */
+  }
+
+
+  /*スクロールして追加するクラスの設定*/
+  .right-fadein{
+      opacity:1;/* 表示させる */
+      transform:translate(0, 0); /* 位置を最初の位置に戻す */
+  }
+
+
+  .container p{
+    text-align: center;
+    font-size: 20px;
+  }
+  .red{
+    background-color:red;
+    padding:100px
+  }
+  .blue{
+    background-color:blue;
+    padding: 100px;
+  }
+
